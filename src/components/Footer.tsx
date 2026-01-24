@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, MessageCircle, Phone, Mail, MapPin } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Phone, Mail, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
