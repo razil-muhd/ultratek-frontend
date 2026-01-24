@@ -1,0 +1,627 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 207 90% 56%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 205 100% 23%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom Text Animations for Hero & Intro */
+.animate-text span {
+  display: inline-block;
+  opacity: 0;
+  /* Maintain spacing for spaces */
+}
+
+.animate-text span:empty {
+  width: 0.3em;
+  display: inline-block;
+}
+
+/* Staggered Delays for up to 100 chars - FAST 0.02s increment */
+.animate-text span:nth-of-type(1) {
+  animation-delay: 0.02s;
+}
+
+.animate-text span:nth-of-type(2) {
+  animation-delay: 0.04s;
+}
+
+.animate-text span:nth-of-type(3) {
+  animation-delay: 0.06s;
+}
+
+.animate-text span:nth-of-type(4) {
+  animation-delay: 0.08s;
+}
+
+.animate-text span:nth-of-type(5) {
+  animation-delay: 0.10s;
+}
+
+.animate-text span:nth-of-type(6) {
+  animation-delay: 0.12s;
+}
+
+.animate-text span:nth-of-type(7) {
+  animation-delay: 0.14s;
+}
+
+.animate-text span:nth-of-type(8) {
+  animation-delay: 0.16s;
+}
+
+.animate-text span:nth-of-type(9) {
+  animation-delay: 0.18s;
+}
+
+.animate-text span:nth-of-type(10) {
+  animation-delay: 0.20s;
+}
+
+.animate-text span:nth-of-type(11) {
+  animation-delay: 0.22s;
+}
+
+.animate-text span:nth-of-type(12) {
+  animation-delay: 0.24s;
+}
+
+.animate-text span:nth-of-type(13) {
+  animation-delay: 0.26s;
+}
+
+.animate-text span:nth-of-type(14) {
+  animation-delay: 0.28s;
+}
+
+.animate-text span:nth-of-type(15) {
+  animation-delay: 0.30s;
+}
+
+.animate-text span:nth-of-type(16) {
+  animation-delay: 0.32s;
+}
+
+.animate-text span:nth-of-type(17) {
+  animation-delay: 0.34s;
+}
+
+.animate-text span:nth-of-type(18) {
+  animation-delay: 0.36s;
+}
+
+.animate-text span:nth-of-type(19) {
+  animation-delay: 0.38s;
+}
+
+.animate-text span:nth-of-type(20) {
+  animation-delay: 0.40s;
+}
+
+.animate-text span:nth-of-type(21) {
+  animation-delay: 0.42s;
+}
+
+.animate-text span:nth-of-type(22) {
+  animation-delay: 0.44s;
+}
+
+.animate-text span:nth-of-type(23) {
+  animation-delay: 0.46s;
+}
+
+.animate-text span:nth-of-type(24) {
+  animation-delay: 0.48s;
+}
+
+.animate-text span:nth-of-type(25) {
+  animation-delay: 0.50s;
+}
+
+.animate-text span:nth-of-type(26) {
+  animation-delay: 0.52s;
+}
+
+.animate-text span:nth-of-type(27) {
+  animation-delay: 0.54s;
+}
+
+.animate-text span:nth-of-type(28) {
+  animation-delay: 0.56s;
+}
+
+.animate-text span:nth-of-type(29) {
+  animation-delay: 0.58s;
+}
+
+.animate-text span:nth-of-type(30) {
+  animation-delay: 0.60s;
+}
+
+/* Extended to 100 for longer sentences */
+.animate-text span:nth-of-type(31) {
+  animation-delay: 0.62s;
+}
+
+.animate-text span:nth-of-type(32) {
+  animation-delay: 0.64s;
+}
+
+.animate-text span:nth-of-type(33) {
+  animation-delay: 0.66s;
+}
+
+.animate-text span:nth-of-type(34) {
+  animation-delay: 0.68s;
+}
+
+.animate-text span:nth-of-type(35) {
+  animation-delay: 0.70s;
+}
+
+.animate-text span:nth-of-type(36) {
+  animation-delay: 0.72s;
+}
+
+.animate-text span:nth-of-type(37) {
+  animation-delay: 0.74s;
+}
+
+.animate-text span:nth-of-type(38) {
+  animation-delay: 0.76s;
+}
+
+.animate-text span:nth-of-type(39) {
+  animation-delay: 0.78s;
+}
+
+.animate-text span:nth-of-type(40) {
+  animation-delay: 0.80s;
+}
+
+.animate-text span:nth-of-type(41) {
+  animation-delay: 0.82s;
+}
+
+.animate-text span:nth-of-type(42) {
+  animation-delay: 0.84s;
+}
+
+.animate-text span:nth-of-type(43) {
+  animation-delay: 0.86s;
+}
+
+.animate-text span:nth-of-type(44) {
+  animation-delay: 0.88s;
+}
+
+.animate-text span:nth-of-type(45) {
+  animation-delay: 0.90s;
+}
+
+.animate-text span:nth-of-type(46) {
+  animation-delay: 0.92s;
+}
+
+.animate-text span:nth-of-type(47) {
+  animation-delay: 0.94s;
+}
+
+.animate-text span:nth-of-type(48) {
+  animation-delay: 0.96s;
+}
+
+.animate-text span:nth-of-type(49) {
+  animation-delay: 0.98s;
+}
+
+.animate-text span:nth-of-type(50) {
+  animation-delay: 1.00s;
+}
+
+.animate-text span:nth-of-type(51) {
+  animation-delay: 1.02s;
+}
+
+.animate-text span:nth-of-type(52) {
+  animation-delay: 1.04s;
+}
+
+.animate-text span:nth-of-type(53) {
+  animation-delay: 1.06s;
+}
+
+.animate-text span:nth-of-type(54) {
+  animation-delay: 1.08s;
+}
+
+.animate-text span:nth-of-type(55) {
+  animation-delay: 1.10s;
+}
+
+.animate-text span:nth-of-type(56) {
+  animation-delay: 1.12s;
+}
+
+.animate-text span:nth-of-type(57) {
+  animation-delay: 1.14s;
+}
+
+.animate-text span:nth-of-type(58) {
+  animation-delay: 1.16s;
+}
+
+.animate-text span:nth-of-type(59) {
+  animation-delay: 1.18s;
+}
+
+.animate-text span:nth-of-type(60) {
+  animation-delay: 1.20s;
+}
+
+.animate-text span:nth-of-type(61) {
+  animation-delay: 1.22s;
+}
+
+.animate-text span:nth-of-type(62) {
+  animation-delay: 1.24s;
+}
+
+.animate-text span:nth-of-type(63) {
+  animation-delay: 1.26s;
+}
+
+.animate-text span:nth-of-type(64) {
+  animation-delay: 1.28s;
+}
+
+.animate-text span:nth-of-type(65) {
+  animation-delay: 1.30s;
+}
+
+.animate-text span:nth-of-type(66) {
+  animation-delay: 1.32s;
+}
+
+.animate-text span:nth-of-type(67) {
+  animation-delay: 1.34s;
+}
+
+.animate-text span:nth-of-type(68) {
+  animation-delay: 1.36s;
+}
+
+.animate-text span:nth-of-type(69) {
+  animation-delay: 1.38s;
+}
+
+.animate-text span:nth-of-type(70) {
+  animation-delay: 1.40s;
+}
+
+.animate-text span:nth-of-type(71) {
+  animation-delay: 1.42s;
+}
+
+.animate-text span:nth-of-type(72) {
+  animation-delay: 1.44s;
+}
+
+.animate-text span:nth-of-type(73) {
+  animation-delay: 1.46s;
+}
+
+.animate-text span:nth-of-type(74) {
+  animation-delay: 1.48s;
+}
+
+.animate-text span:nth-of-type(75) {
+  animation-delay: 1.50s;
+}
+
+.animate-text span:nth-of-type(76) {
+  animation-delay: 1.52s;
+}
+
+.animate-text span:nth-of-type(77) {
+  animation-delay: 1.54s;
+}
+
+.animate-text span:nth-of-type(78) {
+  animation-delay: 1.56s;
+}
+
+.animate-text span:nth-of-type(79) {
+  animation-delay: 1.58s;
+}
+
+.animate-text span:nth-of-type(80) {
+  animation-delay: 1.60s;
+}
+
+.animate-text span:nth-of-type(81) {
+  animation-delay: 1.62s;
+}
+
+.animate-text span:nth-of-type(82) {
+  animation-delay: 1.64s;
+}
+
+.animate-text span:nth-of-type(83) {
+  animation-delay: 1.66s;
+}
+
+.animate-text span:nth-of-type(84) {
+  animation-delay: 1.68s;
+}
+
+.animate-text span:nth-of-type(85) {
+  animation-delay: 1.70s;
+}
+
+.animate-text span:nth-of-type(86) {
+  animation-delay: 1.72s;
+}
+
+.animate-text span:nth-of-type(87) {
+  animation-delay: 1.74s;
+}
+
+.animate-text span:nth-of-type(88) {
+  animation-delay: 1.76s;
+}
+
+.animate-text span:nth-of-type(89) {
+  animation-delay: 1.78s;
+}
+
+.animate-text span:nth-of-type(90) {
+  animation-delay: 1.80s;
+}
+
+.animate-text span:nth-of-type(91) {
+  animation-delay: 1.82s;
+}
+
+.animate-text span:nth-of-type(92) {
+  animation-delay: 1.84s;
+}
+
+.animate-text span:nth-of-type(93) {
+  animation-delay: 1.86s;
+}
+
+.animate-text span:nth-of-type(94) {
+  animation-delay: 1.88s;
+}
+
+.animate-text span:nth-of-type(95) {
+  animation-delay: 1.90s;
+}
+
+.animate-text span:nth-of-type(96) {
+  animation-delay: 1.92s;
+}
+
+.animate-text span:nth-of-type(97) {
+  animation-delay: 1.94s;
+}
+
+.animate-text span:nth-of-type(98) {
+  animation-delay: 1.96s;
+}
+
+.animate-text span:nth-of-type(99) {
+  animation-delay: 1.98s;
+}
+
+.animate-text span:nth-of-type(100) {
+  animation-delay: 2.00s;
+}
+
+
+/* Animation Seven (Left to Right Scale) for "Smart, Scalable Solutions" */
+.anim-seven span {
+  color: #000;
+  /* Will be overridden by tailwind text color usually, but safe default */
+  opacity: 0;
+  transform: translate(-150px, 0) scale(.3);
+  animation: leftRight .5s forwards;
+  /* Reduced from .8s for speed */
+}
+
+@keyframes leftRight {
+  40% {
+    transform: translate(50px, 0) scale(.7);
+    opacity: 1;
+  }
+
+  60% {
+    color: #0f40ba;
+    /* Optional flash of color */
+  }
+
+  80% {
+    transform: translate(0) scale(2);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Animation Two (Ball Drop) for "Warehousing & Cold Storage" */
+.anim-two span {
+  opacity: 0;
+  transform: translate(200px, -100px) scale(2);
+  animation: ballDrop .4s forwards;
+  /* Reduced from .6s for speed */
+}
+
+@keyframes ballDrop {
+  60% {
+    transform: translate(0, 20px) rotate(-180deg) scale(.5);
+  }
+
+  100% {
+    transform: translate(0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Animation Typewriter / Fast Write for descriptions */
+.anim-typewriter span {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: typeReveal 0.2s forwards;
+}
+
+@keyframes typeReveal {
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover Zoom Effect (Concept Two inspired) */
+.hover-text-effect {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.char-zoom {
+  display: inline-block;
+  transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+}
+
+.char-zoom:hover {
+  transform: scale(1.5) rotate(-5deg);
+  /* Added slight rotation for 'fun' feel */
+  color: #3b82f6;
+  /* Highlight color (secondary blue) */
+  text-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  position: relative;
+}
+
+/* Grid Ripple Effect Classes */
+.grid-ripple-container {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  /* 20x20 for smoother coverage */
+  grid-template-rows: repeat(20, 1fr);
+  pointer-events: auto;
+  /* Ensure tiles catch hover */
+  overflow: hidden;
+}
+
+.grid-ripple-tile {
+  position: relative;
+}
+
+.grid-ripple-tile:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 4px;
+  /* Larger */
+  width: 4px;
+  /* Larger */
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.05);
+  /* Light gray, visible */
+  transition: 0.5s linear all;
+  box-shadow: 0 0 0 transparent;
+}
+
+/* Hover Effect - Simulating the concentric dot explosion */
+.grid-ripple-tile:hover:before {
+  height: 4px;
+  width: 4px;
+  background: rgba(0, 69, 117, 0.2);
+  transition: 0.1s linear all;
+
+  box-shadow:
+    /* Ring 1 */
+    3rem 0 0 -1px rgba(0, 69, 117, 0.1), -3rem 0 0 -1px rgba(0, 69, 117, 0.1),
+    0 3rem 0 -1px rgba(0, 69, 117, 0.1), 0 -3rem 0 -1px rgba(0, 69, 117, 0.1),
+    /* Diagonals 1 */
+    2rem 2rem 0 -1px rgba(0, 69, 117, 0.1), -2rem 2rem 0 -1px rgba(0, 69, 117, 0.1),
+    2rem -2rem 0 -1px rgba(0, 69, 117, 0.1), -2rem -2rem 0 -1px rgba(0, 69, 117, 0.1),
+
+    /* Ring 2 */
+    6rem 0 0 -2px rgba(0, 69, 117, 0.05), -6rem 0 0 -2px rgba(0, 69, 117, 0.05),
+    0 6rem 0 -2px rgba(0, 69, 117, 0.05), 0 -6rem 0 -2px rgba(0, 69, 117, 0.05);
+}
