@@ -52,9 +52,9 @@ export default function Footer() {
                                 </a>
                             </li>
                             <li>
-                                <a href="/#contact" className="text-blue-100/80 hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2">
+                                <Link to="/contact" className="text-blue-100/80 hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2">
                                     <span className="w-1.5 h-1.5 rounded-full bg-[#239cf5]"></span> Contact Us
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -92,17 +92,17 @@ export default function Footer() {
                                 </div>
                                 <div>
                                     <p className="text-sm text-blue-200">Call Us</p>
-                                    <p className="font-semibold">+966 50 141 7878</p>
+                                    <p className="font-semibold">+96 65014 17878</p>
                                 </div>
                             </a>
 
-                            <a href="mailto:info@ultratekarabia.com" className="flex items-start gap-4 group">
+                            <a href="mailto:info@ultratekcs.com" className="flex items-start gap-4 group">
                                 <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#239cf5] transition-colors">
                                     <Mail className="w-5 h-5" />
                                 </div>
                                 <div>
                                     <p className="text-sm text-blue-200">Email Us</p>
-                                    <p className="font-semibold">info@ultratekarabia.com</p>
+                                    <p className="font-semibold">info@ultratekcs.com</p>
                                 </div>
                             </a>
 
@@ -112,7 +112,7 @@ export default function Footer() {
                                 </div>
                                 <div>
                                     <p className="text-sm text-blue-200">Location</p>
-                                    <p className="font-semibold">Riyadh, Saudi Arabia</p>
+                                    <p className="font-semibold">AL BAGHDADIYAH, JEDDAH - 22235, K.S.A</p>
                                 </div>
                             </div>
                         </div>

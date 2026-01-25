@@ -47,7 +47,7 @@ export default function Header() {
                         <Link to="/" className={getLinkClass("/")}>Home</Link>
                         <Link to="/about" className={getLinkClass("/about")}>About Us</Link>
                         <Link to="/services" className={getLinkClass("/services")}>Our Services</Link>
-                        <a href="#contact" className="text-sm font-bold text-gray-600 uppercase tracking-wider hover:text-primary transition-colors pb-1 border-b-2 border-transparent hover:border-primary">Contact Us</a>
+                        <Link to="/contact" className={getLinkClass("/contact")}>Contact Us</Link>
                     </nav>
 
                     {/* Desktop Social Icons & CTA */}
@@ -104,7 +104,7 @@ export default function Header() {
                                 <Link to="/" onClick={() => setIsMenuOpen(false)} className="text-white/90 hover:text-white font-medium tracking-wide">Home</Link>
                                 <Link to="/about" onClick={() => setIsMenuOpen(false)} className="text-white/90 hover:text-white font-medium tracking-wide">About Us</Link>
                                 <Link to="/services" onClick={() => setIsMenuOpen(false)} className="text-white/90 hover:text-white font-medium tracking-wide">Our Services</Link>
-                                <a href="#contact" onClick={() => setIsMenuOpen(false)} className="text-white/90 hover:text-white font-medium tracking-wide">Contact Us</a>
+                                <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="text-white/90 hover:text-white font-medium tracking-wide">Contact Us</Link>
                             </nav>
 
                             <div className="flex items-center gap-6 mt-8">

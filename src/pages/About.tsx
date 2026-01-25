@@ -248,6 +248,69 @@ export default function AboutPage() {
                     </div>
                 </div>
             </section>
+
+            {/* Contact Section */}
+            <section className="py-24 bg-slate-900 text-white border-t border-slate-800">
+                <div className="container mx-auto px-6">
+                    <div className="text-center max-w-3xl mx-auto mb-16">
+                        <motion.h2
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="text-3xl md:text-5xl font-bold mb-6"
+                        >
+                            Get in <span className="text-blue-400">Touch</span>
+                        </motion.h2>
+                        <p className="text-slate-400 text-lg">
+                            Ready to start your next project? Reach out to our team of experts.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.1 }}
+                            className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl text-center hover:bg-white/10 transition-all duration-300"
+                        >
+                            <div className="w-16 h-16 bg-blue-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 text-4xl">
+                                📍
+                            </div>
+                            <h3 className="text-xl font-bold mb-2">Visit Us</h3>
+                            <p className="text-slate-400">AL BAGHDADIYAH, JEDDAH<br />22235, K.S.A</p>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.2 }}
+                            className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl text-center hover:bg-white/10 transition-all duration-300"
+                        >
+                            <div className="w-16 h-16 bg-blue-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 text-4xl">
+                                📞
+                            </div>
+                            <h3 className="text-xl font-bold mb-2">Call Us</h3>
+                            <p className="text-slate-400">+96 65014 17878</p>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.3 }}
+                            className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl text-center hover:bg-white/10 transition-all duration-300"
+                        >
+                            <div className="w-16 h-16 bg-blue-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 text-4xl">
+                                ✉️
+                            </div>
+                            <h3 className="text-xl font-bold mb-2">Email Us</h3>
+                            <p className="text-slate-400">info@ultratekcs.com</p>
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
         </div>
     );
 }
