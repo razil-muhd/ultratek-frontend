@@ -1,11 +1,20 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 
 export default function AboutPage() {
+    const containerRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end end"]
+    });
+
+    const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+
     const fadeInUp = {
-        initial: { opacity: 0, y: 60 },
+        initial: { opacity: 0, y: 40 },
         whileInView: { opacity: 1, y: 0 },
         viewport: { once: true },
-        transition: { duration: 0.6 }
+        transition: { duration: 0.8, ease: "easeOut" as const }
     };
 
     const staggerContainer = {
@@ -20,243 +29,223 @@ export default function AboutPage() {
     const services = [
         {
             icon: '📐',
-            title: 'Custom Warehouse Layouts',
-            description: 'We design layouts that maximize productivity and streamline operations'
+            title: 'Custom Layouts',
+            description: 'Data-driven warehouse designs that maximize cubic capacity and throughput.'
         },
         {
             icon: '❄️',
-            title: 'Cold Storage Solutions',
-            description: 'Specialized designs for temperature-controlled environments, ensuring product integrity'
+            title: 'Cold Chain',
+            description: 'Advanced thermal engineering for precise temperature-controlled environments.'
         },
         {
-            icon: '🚚',
-            title: 'Loading Bay Optimization',
-            description: 'Efficient docking systems to improve material handling'
+            icon: '⚡',
+            title: 'Loading Efficiency',
+            description: 'Automated docking systems designed to reduce turnaround times.'
         },
         {
             icon: '🏗️',
-            title: 'Racking Systems Design',
-            description: 'Optimized storage solutions utilizing vertical space efficiently'
-        }
-    ];
-
-    const values = [
-        {
-            title: 'Specialized Professionals',
-            description: 'Resolute and well-trained professionals committed to excellence',
-            icon: '👥'
-        },
-        {
-            title: 'Best Service in Industry',
-            description: 'Providing the highest standard of service and support',
-            icon: '⭐'
-        },
-        {
-            title: 'Highest Quality Control',
-            description: 'Rigorous quality assurance at every stage',
-            icon: '✓'
+            title: 'Vertical Storage',
+            description: 'High-density racking solutions engineered for stability and access.'
         }
     ];
 
     return (
-        <div className="bg-white min-h-screen pt-20"> {/* pt-20 to account for fixed header */}
-            {/* Hero Section */}
-            <motion.section
-                className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-[#239cf5] to-[#004575] py-32 px-12 overflow-hidden"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1 }}
-            >
-                {/* Background Pattern */}
-                <div className="absolute inset-0 opacity-30 pointer-events-none" style={{
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-                }} />
+        <div ref={containerRef} className="bg-slate-50 min-h-screen">
 
-                <div className="relative z-10 max-w-7xl mx-auto text-center">
-                    <motion.h1
-                        className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-tight tracking-tight"
-                        {...fadeInUp}
-                    >
-                        Maximizing Through the <span className="bg-clip-text text-transparent bg-gradient-to-br from-white to-white/70 drop-shadow-lg">Strategic</span>
-                    </motion.h1>
-                    <motion.p
-                        className="text-base md:text-xl leading-relaxed text-white/95 max-w-4xl mx-auto"
-                        {...fadeInUp}
-                        transition={{ delay: 0.2 }}
-                    >
-                        ULTRATEK ARABIA is a company which is actively involved in the Cold store, heavy structuring
-                        fabrication & Erection of all types of steel, civil & Electromechanical contracting,
-                        Refrigeration materials services and human resource development in the kingdom of Saudi Arabia.
-                    </motion.p>
-                </div>
-            </motion.section>
+            {/* Hero Section with Parallax */}
+            <div className="relative h-[70vh] flex items-center justify-center overflow-hidden">
+                <motion.div
+                    style={{ y }}
+                    className="absolute inset-0 z-0"
+                >
+                    <img
+                        src="/about-construction.png"
+                        alt="Background"
+                        className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/80 to-slate-900/40" />
+                </motion.div>
 
-            {/* Values Section */}
-            <section className="py-24 bg-white">
-                <div className="container mx-auto px-6 max-w-7xl">
+                <div className="relative z-10 container mx-auto px-6 text-white pt-20">
                     <motion.div
-                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
-                        variants={staggerContainer}
-                        initial="initial"
-                        whileInView="whileInView"
-                        viewport={{ once: true }}
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8 }}
+                        className="max-w-4xl"
                     >
-                        {values.map((value, index) => (
-                            <motion.div
-                                key={index}
-                                className="bg-white border-2 border-[#239cf5]/10 rounded-3xl p-12 text-center transition-all duration-300 shadow-sm hover:border-[#239cf5] hover:shadow-xl"
-                                variants={fadeInUp}
-                                whileHover={{ y: -10, scale: 1.02 }}
-                            >
-                                <div className="text-6xl mb-6">{value.icon}</div>
-                                <h3 className="text-2xl font-bold text-[#004575] mb-4">{value.title}</h3>
-                                <p className="text-gray-700 leading-relaxed">{value.description}</p>
-                            </motion.div>
-                        ))}
-                    </motion.div>
-                </div>
-            </section>
-
-            {/* Mission Statement */}
-            <motion.section
-                className="py-24 bg-gradient-to-br from-[#239cf5]/5 to-[#004575]/5"
-                {...fadeInUp}
-            >
-                <div className="container mx-auto px-6 max-w-4xl text-center">
-                    <div className="mission-content">
-                        <h2 className="text-4xl md:text-6xl font-black mb-8 text-transparent bg-clip-text bg-gradient-to-br from-[#239cf5] to-[#004575]">Our Commitment</h2>
-                        <p className="text-lg md:text-xl leading-loose text-gray-700">
-                            We are providing quality service to the clients based on professional engineering excellence.
-                            We provide superior performance, Quality work and are committed to making a positive difference
-                            for our clients, community, and in the lives of our employees.
+                        <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
+                            Engineering the <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+                                Infrastructure of Tomorrow
+                            </span>
+                        </h1>
+                        <p className="text-lg md:text-2xl text-slate-300 max-w-2xl leading-relaxed font-light">
+                            ULTRATEK ARABIA combines two decades of expertise with cutting-edge technology to redefine industrial construction standards in Saudi Arabia.
                         </p>
-                    </div>
-                </div>
-            </motion.section>
-
-            {/* What We Offer */}
-            <section className="py-16 bg-white">
-                <div className="container mx-auto px-6 max-w-7xl">
-                    <motion.h2
-                        className="text-4xl md:text-5xl font-black text-center mb-12 text-[#004575]"
-                        {...fadeInUp}
-                    >
-                        What We <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#239cf5] to-[#004575]">Offer</span>
-                    </motion.h2>
-
-                    <motion.div
-                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-                        variants={staggerContainer}
-                        initial="initial"
-                        whileInView="whileInView"
-                        viewport={{ once: true }}
-                    >
-                        {services.map((service, index) => (
-                            <motion.div
-                                key={index}
-                                className="bg-white border border-gray-100 rounded-3xl p-8 text-center transition-all duration-300 hover:shadow-2xl"
-                                variants={fadeInUp}
-                                whileHover={{
-                                    y: -10,
-                                    boxShadow: '0 20px 40px rgba(35, 156, 245, 0.2)'
-                                }}
-                            >
-                                <div className="text-5xl mb-6">{service.icon}</div>
-                                <h3 className="text-xl font-bold text-[#004575] mb-3">{service.title}</h3>
-                                <p className="text-sm text-gray-700 leading-relaxed">{service.description}</p>
-                            </motion.div>
-                        ))}
                     </motion.div>
+                </div>
+            </div>
+
+            {/* Introduction / Mission Split */}
+            <section className="py-24 md:py-32">
+                <div className="container mx-auto px-6">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <motion.div
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            <span className="text-blue-600 font-bold tracking-widest text-sm uppercase mb-4 block">Our Story</span>
+                            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 leading-tight">
+                                More Than Just <br /> Construction
+                            </h2>
+                            <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
+                                <p>
+                                    Founded with a vision to transform the logistics landscape, ULTRATEK ARABIA has grown into a premier multi-disciplinary contractor. We don't simply erect steel structures; we engineer ecosystems that empower businesses to operate more efficiently.
+                                </p>
+                                <p>
+                                    As experts in Cold Store, Heavy Structural Fabrication, and Electromechanical contracting, we bring a holistic approach to every project. Our integrated methodology ensures that civil works, refrigeration, and structural engineering work in perfect harmony.
+                                </p>
+                            </div>
+
+                            <div className="mt-12 flex gap-12">
+                                <div>
+                                    <h3 className="text-4xl font-black text-blue-600 mb-1">22+</h3>
+                                    <p className="text-slate-500 font-medium">Years Experience</p>
+                                </div>
+                                <div>
+                                    <h3 className="text-4xl font-black text-blue-600 mb-1">150+</h3>
+                                    <p className="text-slate-500 font-medium">Projects Delivered</p>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        <motion.div
+                            className="relative"
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl z-10">
+                                <img src="/about-warehouse.png" alt="Warehouse Interior" className="w-full h-auto object-cover" />
+                                <div className="absolute inset-0 bg-blue-600/10 mix-blend-multiply" />
+                            </div>
+                            {/* Decorative Block */}
+                            <div className="absolute top-10 -right-10 w-full h-full bg-slate-200 rounded-[2rem] -z-10" />
+                            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-dots-pattern opacity-20" />
+                        </motion.div>
+                    </div>
                 </div>
             </section>
 
-            {/* Founder's Word */}
-            <motion.section
-                className="py-24 bg-gradient-to-br from-[#004575] to-[#239cf5]"
-                {...fadeInUp}
-            >
-                <div className="container mx-auto px-6 max-w-7xl">
-                    <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16 items-center bg-white/10 backdrop-blur-xl border border-white/20 rounded-[32px] p-10 md:p-16">
-                        <div className="flex justify-center">
-                            <div className="w-60 h-60 rounded-full bg-gradient-to-br from-white/20 to-white/5 border-4 border-white/30 flex items-center justify-center shadow-2xl">
-                                <span className="text-7xl font-bold text-white">CEO</span>
-                            </div>
-                        </div>
-                        <div className="text-white text-center lg:text-left">
-                            <span className="inline-block text-sm font-bold tracking-[0.2em] uppercase text-white/80 mb-4">Founder's Word</span>
-                            <h2 className="text-3xl md:text-5xl font-black mb-6 leading-tight">Building the Future of Logistics</h2>
-                            <p className="text-lg md:text-xl leading-relaxed text-white/95 italic mb-8">
-                                "At ULTRATEK ARABIA, we don't just build warehouses – we create strategic solutions
-                                that maximize efficiency and drive success. Our commitment to excellence, combined with
-                                cutting-edge technology and a dedicated team, ensures that every project we undertake
-                                sets new standards in the industry."
-                            </p>
-                            <div className="border-t border-white/20 pt-6">
-                                <p className="text-xl font-bold mb-1">Mohammed Al-Rashid</p>
-                                <p className="text-white/80">Founder & CEO, ULTRATEK ARABIA</p>
-                            </div>
-                        </div>
+            {/* Core Values - Cards */}
+            <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
+                <div className="absolute inset-0 bg-[url('/about-construction.png')] opacity-10 bg-fixed bg-cover bg-center" />
+                <div className="container mx-auto px-6 relative z-10">
+                    <div className="text-center max-w-3xl mx-auto mb-20">
+                        <motion.h2
+                            className="text-3xl md:text-5xl font-bold mb-6"
+                            {...fadeInUp}
+                        >
+                            Our Core <span className="text-blue-400">Values</span>
+                        </motion.h2>
+                        <motion.p
+                            className="text-slate-400 text-lg"
+                            {...fadeInUp}
+                            transition={{ delay: 0.1 }}
+                        >
+                            The principles that guide every blueprint we draw and every beam we place.
+                        </motion.p>
                     </div>
-                </div>
-            </motion.section>
-
-            {/* Client Testimonials */}
-            <section className="py-24 bg-white">
-                <div className="container mx-auto px-6 max-w-7xl">
-                    <motion.h2
-                        className="text-4xl md:text-6xl font-black text-center mb-20 text-[#004575]"
-                        {...fadeInUp}
-                    >
-                        What Our <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#239cf5] to-[#004575]">Clients Say</span>
-                    </motion.h2>
 
                     <motion.div
-                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+                        className="grid grid-cols-1 md:grid-cols-3 gap-8"
                         variants={staggerContainer}
                         initial="initial"
                         whileInView="whileInView"
                         viewport={{ once: true }}
                     >
                         {[
-                            {
-                                name: 'Ahmed Al-Mansouri',
-                                position: 'Operations Director',
-                                company: 'Saudi Logistics Corp',
-                                text: 'ULTRATEK delivered our cold storage facility on time and exceeded all expectations. Their attention to detail and professional approach is unmatched.'
-                            },
-                            {
-                                name: 'Fatima Hassan',
-                                position: 'Supply Chain Manager',
-                                company: 'Gulf Distribution Co.',
-                                text: 'The warehouse layout optimization by ULTRATEK increased our operational efficiency by 40%. Truly exceptional engineering work.'
-                            },
-                            {
-                                name: 'Khalid Ibrahim',
-                                position: 'CEO',
-                                company: 'Modern Trade Solutions',
-                                text: 'Professional, reliable, and innovative. ULTRATEK is our trusted partner for all cold storage and warehousing projects.'
-                            }
-                        ].map((testimonial, index) => (
+                            { title: "Precision Engineering", desc: "We believe that details define quality. Zero tolerance for errors in execution.", icon: "🎯" },
+                            { title: "Sustainable Innovation", desc: "Building for the future using energy-efficient materials and smart technologies.", icon: "🌱" },
+                            { title: "Client Partnership", desc: "We don't just work for you; we work with you to realize your operational goals.", icon: "🤝" }
+                        ].map((item, idx) => (
                             <motion.div
-                                key={index}
-                                className="bg-white border-2 border-[#239cf5]/10 rounded-3xl p-10 transition-all duration-300 hover:border-[#239cf5] hover:shadow-xl hover:-translate-y-2"
+                                key={idx}
+                                className="bg-white/5 backdrop-blur-sm border border-white/10 p-10 rounded-2xl hover:bg-white/10 transition-colors duration-300"
                                 variants={fadeInUp}
-                                whileHover={{ y: -5 }}
                             >
-                                <div className="flex gap-1 mb-5">
-                                    {[...Array(5)].map((_, i) => (
-                                        <span key={i} className="text-yellow-400 text-xl">★</span>
-                                    ))}
+                                <div className="text-4xl mb-6 bg-blue-500/20 w-16 h-16 rounded-xl flex items-center justify-center">
+                                    {item.icon}
                                 </div>
-                                <p className="text-gray-700 italic leading-relaxed mb-6">{testimonial.text}</p>
-                                <div className="border-t border-gray-100 pt-5">
-                                    <p className="text-lg font-bold text-[#004575] mb-1">{testimonial.name}</p>
-                                    <p className="text-sm text-gray-500 mb-0.5">{testimonial.position}</p>
-                                    <p className="text-sm font-semibold text-[#239cf5]">{testimonial.company}</p>
-                                </div>
+                                <h3 className="text-xl font-bold mb-4">{item.title}</h3>
+                                <p className="text-slate-400 leading-relaxed">{item.desc}</p>
                             </motion.div>
                         ))}
                     </motion.div>
+                </div>
+            </section>
+
+            {/* Expertise Grid */}
+            <section className="py-24 bg-white">
+                <div className="container mx-auto px-6">
+                    <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                        <div className="max-w-2xl">
+                            <h2 className="text-4xl font-bold text-slate-900 mb-4">Comprehensive Solutions</h2>
+                            <p className="text-slate-600 text-lg">From initial concept layout to final handover, we cover every aspect of industrial construction.</p>
+                        </div>
+                        <button className="px-8 py-4 bg-slate-900 text-white font-bold rounded-xl hover:bg-blue-600 transition-colors">
+                            View Our Services
+                        </button>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {services.map((service, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                whileHover={{ y: -5 }}
+                                className="group p-8 rounded-3xl bg-slate-50 hover:bg-white border border-slate-100 hover:border-blue-100 hover:shadow-xl transition-all duration-300"
+                            >
+                                <div className="text-4xl mb-6 transform group-hover:scale-110 transition-transform duration-300">{service.icon}</div>
+                                <h3 className="text-lg font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">{service.title}</h3>
+                                <p className="text-slate-500 text-sm leading-relaxed">{service.description}</p>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Team / Founder Section */}
+            <section className="py-24 bg-gradient-to-br from-blue-50 to-white relative overflow-hidden">
+                <div className="container mx-auto px-6 relative z-10">
+                    <div className="bg-white rounded-[3rem] p-8 md:p-12 shadow-xl border border-blue-100 flex flex-col lg:flex-row gap-12 items-center">
+                        <div className="w-full lg:w-1/2 relative">
+                            <div className="aspect-[4/3] rounded-2xl overflow-hidden relative">
+                                <img src="/about-team.png" alt="Engineering Team" className="w-full h-full object-cover" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
+                                <div className="absolute bottom-6 left-6 text-white">
+                                    <p className="font-bold text-lg">The Minds Behind UltraTek</p>
+                                    <p className="text-sm opacity-80">Riyadh HQ Planning Session</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="w-full lg:w-1/2">
+                            <svg className="w-12 h-12 text-blue-400 mb-6 opacity-50" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.0547 15.192 15.1543 14.8154 13.9746C14.321 12.3965 12.4497 12.4834 12.4497 9.8252C12.4497 7.50293 14.282 5.43359 16.7119 5.43359C19.3838 5.43359 21.4648 8.0166 21.4648 10.9756C21.4648 15.707 18.0645 21 14.017 21ZM4.91016 21L4.91016 18C4.91016 16.0547 6.08887 15.1543 5.71426 13.9746C5.2209 12.3965 3.32715 12.4834 3.32715 9.8252C3.32715 7.50293 5.37891 5.43359 7.82812 5.43359C10.5 5.43359 12.5811 8.0166 12.5811 10.9756C12.5811 15.707 9.17773 21 4.91016 21Z" /></svg>
+                            <h3 className="text-2xl md:text-4xl font-bold text-slate-900 mb-8 leading-snug">
+                                "Our commitment is not just to build structures, but to build <span className="text-blue-600">trust</span>. Every project is a promise kept."
+                            </h3>
+                            <div>
+                                <h4 className="text-xl font-bold text-slate-900">Mohammed Al-Rashid</h4>
+                                <p className="text-blue-500 font-medium tracking-wide text-sm uppercase">Founder & CEO</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
