@@ -46,7 +46,7 @@ export default function Header() {
                     <nav className={`hidden lg:flex items-center gap-12 transition-all duration-300 pointer-events-auto ${isScrolled ? 'opacity-0 translate-y-[-20px] pointer-events-none hidden' : 'opacity-100 translate-y-0'}`}>
                         <Link to="/" className={getLinkClass("/")}>Home</Link>
                         <Link to="/about" className={getLinkClass("/about")}>About Us</Link>
-                        <a href="#services" className="text-sm font-bold text-gray-600 uppercase tracking-wider hover:text-primary transition-colors pb-1 border-b-2 border-transparent hover:border-primary">Our Services</a>
+                        <Link to="/services" className={getLinkClass("/services")}>Our Services</Link>
                         <a href="#contact" className="text-sm font-bold text-gray-600 uppercase tracking-wider hover:text-primary transition-colors pb-1 border-b-2 border-transparent hover:border-primary">Contact Us</a>
                     </nav>
 
@@ -103,7 +103,7 @@ export default function Header() {
                             <nav className="flex flex-col items-center gap-6 text-xl">
                                 <Link to="/" onClick={() => setIsMenuOpen(false)} className="text-white/90 hover:text-white font-medium tracking-wide">Home</Link>
                                 <Link to="/about" onClick={() => setIsMenuOpen(false)} className="text-white/90 hover:text-white font-medium tracking-wide">About Us</Link>
-                                <a href="#services" onClick={() => setIsMenuOpen(false)} className="text-white/90 hover:text-white font-medium tracking-wide">Our Services</a>
+                                <Link to="/services" onClick={() => setIsMenuOpen(false)} className="text-white/90 hover:text-white font-medium tracking-wide">Our Services</Link>
                                 <a href="#contact" onClick={() => setIsMenuOpen(false)} className="text-white/90 hover:text-white font-medium tracking-wide">Contact Us</a>
                             </nav>
 
