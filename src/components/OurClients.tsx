@@ -57,7 +57,7 @@ export default function OurClients() {
                                 <img
                                     src={client.logo}
                                     alt={client.name}
-                                    className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                                    className="w-full h-full object-contain"
                                 />
                             </div>
                         ))}
@@ -89,7 +89,7 @@ export default function OurClients() {
                                 <img
                                     src={client.logo}
                                     alt={client.name}
-                                    className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                                    className="w-full h-full object-contain"
                                 />
                             </div>
                         ))}

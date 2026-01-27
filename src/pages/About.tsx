@@ -50,7 +50,7 @@ export default function AboutPage() {
     ];
 
     return (
-        <div ref={containerRef} className="bg-slate-50 min-h-screen">
+        <div ref={containerRef} className="bg-slate-50 min-h-screen overflow-x-hidden">
 
             {/* Hero Section with Parallax */}
             <div className="relative h-[70vh] flex items-center justify-center overflow-hidden">

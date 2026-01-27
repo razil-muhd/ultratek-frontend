@@ -1,20 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Instagram, Facebook, Linkedin, Phone, Menu, X, MessageCircle } from 'lucide-react';
+import { Instagram, Facebook, Linkedin, Phone, Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
     const location = useLocation();
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
 
     const getLinkClass = (path: string) => {
         const isActive = location.pathname === path;
@@ -28,8 +19,7 @@ export default function Header() {
         <>
             {/* Header */}
             <header
-                className={`fixed top-0 w-full z-50 transition-all duration-500 pointer-events-none ${isScrolled ? 'bg-transparent py-4' : 'bg-white/90 backdrop-blur-sm shadow-sm py-4'
-                    }`}
+                className="fixed top-0 w-full z-50 transition-all duration-500 pointer-events-none bg-white/90 backdrop-blur-sm shadow-sm py-2"
             >
                 <div className="container mx-auto px-6 flex items-center justify-between">
                     {/* Logo */}
@@ -38,12 +28,12 @@ export default function Header() {
                         <img
                             src="/logo.png"
                             alt="Ultratek Logo"
-                            className="h-16 w-auto object-contain transition-all duration-300"
+                            className="h-14 w-auto object-contain transition-all duration-300"
                         />
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <nav className={`hidden lg:flex items-center gap-12 transition-all duration-300 pointer-events-auto ${isScrolled ? 'opacity-0 translate-y-[-20px] pointer-events-none hidden' : 'opacity-100 translate-y-0'}`}>
+                    <nav className="hidden lg:flex items-center gap-12 transition-all duration-300 pointer-events-auto opacity-100 translate-y-0">
                         <Link to="/" className={getLinkClass("/")}>Home</Link>
                         <Link to="/about" className={getLinkClass("/about")}>About Us</Link>
                         <Link to="/services" className={getLinkClass("/services")}>Our Services</Link>
@@ -51,7 +41,7 @@ export default function Header() {
                     </nav>
 
                     {/* Desktop Social Icons & CTA */}
-                    <div className={`hidden lg:flex items-center gap-3 transition-opacity duration-300 pointer-events-auto ${isScrolled ? 'opacity-0 pointer-events-none hidden' : 'opacity-100'}`}>
+                    <div className="hidden lg:flex items-center gap-3 transition-opacity duration-300 pointer-events-auto opacity-100">
                         <a href="#" className="flex items-center justify-center w-10 h-10 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300" aria-label="Instagram">
                             <Instagram className="w-5 h-5" />
                         </a>
@@ -59,7 +49,19 @@ export default function Header() {
                             <Facebook className="w-5 h-5" />
                         </a>
                         <a href="https://wa.me/966501417878" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300" aria-label="WhatsApp">
-                            <MessageCircle className="w-5 h-5" />
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                className="w-[22px] h-[22px] pb-[1px]"
+                            >
+                                <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
+                                <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
+                            </svg>
                         </a>
                         <a href="#" className="flex items-center justify-center w-10 h-10 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300" aria-label="LinkedIn">
                             <Linkedin className="w-5 h-5" />
@@ -69,12 +71,9 @@ export default function Header() {
                         </a>
                     </div>
 
-                    {/* Hamburger Button - Visible on Mobile OR when Scrolled */}
+                    {/* Hamburger Button - Visible on Mobile */}
                     <button
-                        className={`p-2 rounded-md transition-all duration-300 hover:bg-gray-100 pointer-events-auto ${isScrolled
-                            ? 'block bg-white/80 shadow-sm backdrop-blur-md text-primary'  // Scrolled: Visible with background for contrast
-                            : 'lg:hidden text-gray-700' // Top: Hidden on Desktop, plain on Mobile
-                            }`}
+                        className="p-2 rounded-md transition-all duration-300 hover:bg-gray-100 pointer-events-auto lg:hidden text-gray-700"
                         onClick={() => setIsMenuOpen(true)}
                         aria-label="Menu"
                     >
@@ -115,7 +114,19 @@ export default function Header() {
                                     <Facebook className="w-6 h-6" />
                                 </a>
                                 <a href="https://wa.me/966501417878" className="text-white/75 hover:text-white transition-colors" aria-label="WhatsApp">
-                                    <MessageCircle className="w-6 h-6" />
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        strokeWidth="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        className="w-6 h-6 pb-[2px]"
+                                    >
+                                        <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
+                                        <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
+                                    </svg>
                                 </a>
                                 <a href="#" className="text-white/75 hover:text-white transition-colors" aria-label="LinkedIn">
                                     <Linkedin className="w-6 h-6" />

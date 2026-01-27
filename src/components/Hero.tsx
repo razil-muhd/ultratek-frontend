@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Snowflake, Play } from 'lucide-react';
+import { Play } from 'lucide-react';
 
 export default function Hero() {
     const [activeService, setActiveService] = useState(0);
@@ -44,14 +44,7 @@ export default function Hero() {
                                 }
                             }}
                         >
-                            {/* Badge */}
-                            <motion.div
-                                variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-                                className="mb-6 inline-flex items-center gap-2 px-5 py-2 rounded-full bg-sky-100/50 border border-sky-300 backdrop-blur-sm"
-                            >
-                                <Snowflake className="w-5 h-5 text-sky-500" />
-                                <span className="text-base font-medium text-blue-600">Premium Cold Storage</span>
-                            </motion.div>
+
 
                             {/* Headline */}
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-foreground mb-6">

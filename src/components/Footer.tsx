@@ -21,13 +21,33 @@ export default function Footer() {
                         </p>
                         <div className="flex gap-4">
                             <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-[#004575] transition-all duration-300">
-                                <Facebook className="w-5 h-5" />
-                            </a>
-                            <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-[#004575] transition-all duration-300">
                                 <Instagram className="w-5 h-5" />
                             </a>
                             <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-[#004575] transition-all duration-300">
+                                <Facebook className="w-5 h-5" />
+                            </a>
+                            <a href="https://wa.me/966501417878" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-[#004575] transition-all duration-300">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    className="w-[22px] h-[22px] pb-[1px]"
+                                >
+                                    <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
+                                    <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
+                                </svg>
+                            </a>
+                            <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-[#004575] transition-all duration-300">
                                 <Linkedin className="w-5 h-5" />
+                            </a>
+                            <a href="tel:+966501417878" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-[#004575] transition-all duration-300">
+                                <Phone className="w-5 h-5" />
                             </a>
                         </div>
                     </div>
@@ -38,22 +58,22 @@ export default function Footer() {
                         <ul className="space-y-4">
                             <li>
                                 <Link to="/" className="text-blue-100/80 hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-[#239cf5]"></span> Home
+                                    Home
                                 </Link>
                             </li>
                             <li>
                                 <Link to="/about" className="text-blue-100/80 hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-[#239cf5]"></span> About Us
+                                    About Us
                                 </Link>
                             </li>
                             <li>
-                                <a href="/#services" className="text-blue-100/80 hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-[#239cf5]"></span> Our Services
-                                </a>
+                                <Link to="/services" className="text-blue-100/80 hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2">
+                                    Our Services
+                                </Link>
                             </li>
                             <li>
                                 <Link to="/contact" className="text-blue-100/80 hover:text-white hover:pl-2 transition-all duration-300 flex items-center gap-2">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-[#239cf5]"></span> Contact Us
+                                    Contact Us
                                 </Link>
                             </li>
                         </ul>
@@ -63,20 +83,16 @@ export default function Footer() {
                     <div>
                         <h3 className="text-xl font-bold mb-6">Our Services</h3>
                         <ul className="space-y-4">
-                            <li className="text-blue-100/80 flex items-start gap-3">
-                                <div className="mt-1.5 min-w-[6px] h-[6px] rounded-full bg-[#239cf5]" />
+                            <li className="text-blue-100/80 flex items-start gap-3 hover:text-white hover:pl-2 transition-all duration-300">
                                 <span>Cold Room Construction</span>
                             </li>
-                            <li className="text-blue-100/80 flex items-start gap-3">
-                                <div className="mt-1.5 min-w-[6px] h-[6px] rounded-full bg-[#239cf5]" />
+                            <li className="text-blue-100/80 flex items-start gap-3 hover:text-white hover:pl-2 transition-all duration-300">
                                 <span>Warehouse Racking Systems</span>
                             </li>
-                            <li className="text-blue-100/80 flex items-start gap-3">
-                                <div className="mt-1.5 min-w-[6px] h-[6px] rounded-full bg-[#239cf5]" />
+                            <li className="text-blue-100/80 flex items-start gap-3 hover:text-white hover:pl-2 transition-all duration-300">
                                 <span>Loading Bay Equipment</span>
                             </li>
-                            <li className="text-blue-100/80 flex items-start gap-3">
-                                <div className="mt-1.5 min-w-[6px] h-[6px] rounded-full bg-[#239cf5]" />
+                            <li className="text-blue-100/80 flex items-start gap-3 hover:text-white hover:pl-2 transition-all duration-300">
                                 <span>Industrial Doors</span>
                             </li>
                         </ul>
