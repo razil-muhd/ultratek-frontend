@@ -69,8 +69,13 @@ export default function Hero() {
                                     ))}
                                 </span>
                                 <span className="block animate-text anim-two bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
-                                    {"Warehousing & Cold Storage".split("").map((char, i) => (
-                                        <span key={i} className="text-primary">{char === " " ? "\u00A0" : char}</span>
+                                    {"Warehousing & Cold Storage".split(" ").map((word, i) => (
+                                        <span key={i} className="inline-block whitespace-nowrap">
+                                            {word.split("").map((char, j) => (
+                                                <span key={j} className="text-primary">{char}</span>
+                                            ))}
+                                            &nbsp;
+                                        </span>
                                     ))}
                                 </span>
                             </h1>
