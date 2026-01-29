@@ -63,7 +63,6 @@ export default function Testimonials() {
         <section className="py-24 bg-gray-50 overflow-hidden">
             <div className="container mx-auto px-6">
                 {/* Section Heading - Center */}
-                {/* Section Heading - Center */}
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold text-[#004575] hover-text-effect">
                         {"Client Testimonial".split("").map((char, i) => (
@@ -72,7 +71,7 @@ export default function Testimonials() {
                     </h2>
                 </div>
 
-                <div className="relative flex items-center justify-center gap-4 md:gap-8 h-[450px]">
+                <div className="relative flex items-center justify-center gap-4 md:gap-8 min-h-[450px]">
 
                     {/* Left Arrow */}
                     <button
@@ -86,7 +85,7 @@ export default function Testimonials() {
 
                     {/* Previous Card - Left Side (Visible on Tablet/Desktop) */}
                     <div
-                        className="hidden md:flex flex-col justify-between w-[320px] h-[320px] p-8 bg-white/50 backdrop-blur-sm rounded-3xl border border-gray-100 shadow-sm opacity-40 scale-90 cursor-pointer hover:opacity-60 transition-all duration-300"
+                        className="hidden lg:flex flex-col justify-between w-[320px] h-[320px] p-8 bg-white/50 backdrop-blur-sm rounded-3xl border border-gray-100 shadow-sm opacity-40 scale-90 cursor-pointer hover:opacity-60 transition-all duration-300"
                         onClick={prevTestimonial}
                     >
                         {/* Stars Top */}
@@ -114,7 +113,7 @@ export default function Testimonials() {
                         initial={{ opacity: 0, scale: 0.9, y: 10 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         transition={{ duration: 0.4 }}
-                        className="w-full md:w-[600px] h-auto min-h-[350px] p-10 bg-white rounded-[2rem] shadow-2xl border border-blue-50 z-20 flex flex-col justify-between"
+                        className="w-full max-w-2xl h-auto min-h-[350px] p-8 md:p-10 bg-white rounded-[2rem] shadow-2xl border border-blue-50 z-20 flex flex-col justify-between"
                     >
                         {/* Stars Top */}
                         <div className="flex gap-1 mb-6">
@@ -137,7 +136,7 @@ export default function Testimonials() {
 
                     {/* Next Card - Right Side (Visible on Tablet/Desktop) */}
                     <div
-                        className="hidden md:flex flex-col justify-between w-[320px] h-[320px] p-8 bg-white/50 backdrop-blur-sm rounded-3xl border border-gray-100 shadow-sm opacity-40 scale-90 cursor-pointer hover:opacity-60 transition-all duration-300"
+                        className="hidden lg:flex flex-col justify-between w-[320px] h-[320px] p-8 bg-white/50 backdrop-blur-sm rounded-3xl border border-gray-100 shadow-sm opacity-40 scale-90 cursor-pointer hover:opacity-60 transition-all duration-300"
                         onClick={nextTestimonial}
                     >
                         {/* Stars Top */}
@@ -170,9 +169,9 @@ export default function Testimonials() {
                     </button>
 
                     {/* Mobile Navigation controls */}
-                    <div className="flex md:hidden absolute bottom-0 gap-4">
-                        <button onClick={prevTestimonial} className="p-3 bg-white rounded-full shadow-md text-primary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6" /></svg></button>
-                        <button onClick={nextTestimonial} className="p-3 bg-white rounded-full shadow-md text-primary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6" /></svg></button>
+                    <div className="flex md:hidden absolute -bottom-12 gap-4">
+                        <button onClick={prevTestimonial} className="p-3 bg-white rounded-full shadow-md text-primary hover:bg-gray-50 transition-colors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6" /></svg></button>
+                        <button onClick={nextTestimonial} className="p-3 bg-white rounded-full shadow-md text-primary hover:bg-gray-50 transition-colors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6" /></svg></button>
                     </div>
 
                 </div>

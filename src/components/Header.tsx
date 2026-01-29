@@ -28,7 +28,7 @@ export default function Header() {
                         <img
                             src="/logo.png"
                             alt="Ultratek Logo"
-                            className="h-14 w-auto object-contain transition-all duration-300"
+                            className="h-12 w-auto object-contain transition-all duration-300"
                         />
                     </Link>
 

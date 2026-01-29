@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play } from 'lucide-react';
@@ -16,11 +17,14 @@ export default function Hero() {
         <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
-                <img
-                    src="/hero.jpg"
-                    alt="Cold Storage Warehouse"
-                    className="w-full h-full object-cover"
-                />
+                <picture>
+                    <source media="(max-width: 768px)" srcSet="/hero-mob.png" />
+                    <img
+                        src="/hero.jpg"
+                        alt="Cold Storage Warehouse"
+                        className="w-full h-full object-cover"
+                    />
+                </picture>
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-white/20" />
             </div>
@@ -48,10 +52,20 @@ export default function Hero() {
 
                             {/* Headline */}
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-foreground mb-6">
-                                <span className="block animate-text anim-seven mb-2">
-                                    {/* Helper to split text */}
-                                    {"Smart, Scalable Solutions for".split("").map((char, i) => (
-                                        <span key={i}>{char === " " ? "\u00A0" : char}</span>
+                                {/* Part 1: Smart, Scalable */}
+                                <span className="block md:inline-block animate-text anim-seven mb-2 md:mb-0">
+                                    {"Smart, Scalable".split("").map((char, i) => (
+                                        <span key={`p1-${i}`}>{char === " " ? "\u00A0" : char}</span>
+                                    ))}
+                                </span>
+
+                                {/* Space for desktop */}
+                                <span className="hidden md:inline-block">&nbsp;</span>
+
+                                {/* Part 2: Solutions for */}
+                                <span className="block md:inline-block animate-text anim-seven mb-2">
+                                    {"Solutions for".split("").map((char, i) => (
+                                        <span key={`p2-${i}`}>{char === " " ? "\u00A0" : char}</span>
                                     ))}
                                 </span>
                                 <span className="block animate-text anim-two bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
@@ -74,12 +88,38 @@ export default function Hero() {
                             <motion.div
                                 variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
                             >
-                                <button className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-full text-sm font-semibold hover:bg-primary/90 transition-all hover:shadow-lg hover:shadow-primary/25 group">
+                                <Link to="/about" className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-full text-sm font-semibold hover:bg-primary/90 transition-all hover:shadow-lg hover:shadow-primary/25 group">
                                     <Play className="w-4 h-4 fill-current" />
                                     <span>Explore More</span>
-                                </button>
+                                </Link>
                             </motion.div>
                         </motion.div>
+                    </div>
+
+                    {/* Mobile Services List */}
+                    <div className="lg:hidden col-span-1 mt-8 w-full max-w-[340px] mx-auto flex flex-col gap-3 pb-12">
+                        {services.map((service, index) => (
+                            <motion.div
+                                key={service.id}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.2 + (index * 0.1), duration: 0.5 }}
+                                className="relative flex items-center p-3 rounded-2xl bg-white/70 backdrop-blur-md border border-white/40 shadow-sm w-full h-[70px]"
+                            >
+                                {/* Icon Container */}
+                                <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl text-2xl bg-white/40">
+                                    {service.icon}
+                                </div>
+
+                                {/* Text Content */}
+                                <div className="flex flex-col ml-3 whitespace-nowrap overflow-hidden">
+                                    <div className="flex items-center gap-2">
+                                        <span className="text-blue-600 font-bold text-xs tracking-widest opacity-80">{service.id}</span>
+                                        <span className="text-gray-900 font-bold text-sm truncate">{service.title}</span>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        ))}
                     </div>
 
                     {/* Right Content - Services Sidebar */}

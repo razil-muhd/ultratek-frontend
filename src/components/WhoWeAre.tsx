@@ -28,34 +28,40 @@ export default function WhoWeAre() {
 
     return (
         <section className="py-24 bg-gray-50 overflow-hidden">
+
             <div className="container mx-auto px-6">
 
                 {/* Intro */}
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#004575] hover-text-effect">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-[#004575] hover-text-effect">
                         {"WHO WE ARE".split("").map((char, i) => (
                             <span key={i} className="char-zoom">{char === " " ? "\u00A0" : char}</span>
                         ))}
                     </h2>
                     <motion.div
-                        className="text-xl text-gray-600 block"
+                        className="text-lg md:text-xl text-gray-600 block max-w-4xl mx-auto leading-relaxed"
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
+                        viewport={{ once: true }}
                         variants={{
                             visible: { transition: { staggerChildren: 0.01 } }
                         }}
                     >
-                        {"We Offer Warehouse Solutions, Cold Storage Solutions & Loading Bay Optimization".split("").map((char, i) => (
-                            <motion.span
-                                key={i}
-                                variants={{
-                                    hidden: { opacity: 0, y: 10 },
-                                    visible: { opacity: 1, y: 0 }
-                                }}
-                            >
-                                {char === " " ? "\u00A0" : char}
-                            </motion.span>
+                        {"We Offer Warehouse Solutions, Cold Storage Solutions & Loading Bay Optimization".split(" ").map((word, i) => (
+                            <span key={i} className="inline-block whitespace-nowrap mr-1">
+                                {word.split("").map((char, charIndex) => (
+                                    <motion.span
+                                        key={charIndex}
+                                        variants={{
+                                            hidden: { opacity: 0, y: 10 },
+                                            visible: { opacity: 1, y: 0 }
+                                        }}
+                                        className="inline-block"
+                                    >
+                                        {char}
+                                    </motion.span>
+                                ))}
+                            </span>
                         ))}
                     </motion.div>
                 </div>
@@ -63,12 +69,12 @@ export default function WhoWeAre() {
                 {/* Tab Navigation */}
                 <div className="max-w-4xl mx-auto mb-12">
                     <nav className="p-2 rounded-xl bg-white/50 backdrop-blur-sm border border-gray-100 shadow-sm">
-                        <ul className="flex items-center justify-between md:justify-center gap-2 md:gap-8 overflow-x-auto">
+                        <ul className="flex items-center justify-between md:justify-center gap-1 md:gap-8 overflow-x-auto no-scrollbar">
                             {tabs.map((item) => (
                                 <motion.li
                                     key={item.id}
                                     className={`
-                                        relative px-6 py-3 cursor-pointer rounded-lg text-sm md:text-base font-bold uppercase tracking-wider transition-colors
+                                        relative px-3 md:px-6 py-3 cursor-pointer rounded-lg text-[10px] sm:text-xs md:text-base font-bold uppercase tracking-wider transition-colors whitespace-nowrap
                                         ${item.id === selectedTab.id ? 'text-primary' : 'text-gray-500 hover:text-gray-700'}
                                     `}
                                     onClick={() => setSelectedTab(item)}
@@ -111,16 +117,16 @@ export default function WhoWeAre() {
                             </div>
 
                             {/* Text Side */}
-                            <div className="w-full md:w-1/2 p-10 md:p-16 flex flex-col justify-center">
+                            <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center">
                                 <motion.div
                                     initial={{ opacity: 0, x: 20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: 0.2 }}
                                 >
-                                    <h3 className="text-3xl md:text-4xl font-extrabold text-[#004575] mb-8">
+                                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-[#004575] mb-6 md:mb-8">
                                         {selectedTab.label}
                                     </h3>
-                                    <p className="text-lg text-gray-600 leading-relaxed font-medium">
+                                    <p className="text-base md:text-lg text-gray-600 leading-relaxed font-medium">
                                         {selectedTab.description}
                                     </p>
                                 </motion.div>

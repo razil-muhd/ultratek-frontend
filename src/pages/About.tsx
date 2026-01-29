@@ -292,7 +292,7 @@ export default function AboutPage() {
                                 📞
                             </div>
                             <h3 className="text-xl font-bold mb-2">Call Us</h3>
-                            <p className="text-slate-400">+96 65014 17878</p>
+                            <p className="text-slate-400">+966 50 141 7878</p>
                         </motion.div>
 
                         <motion.div
