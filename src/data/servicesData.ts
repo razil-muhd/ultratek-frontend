@@ -21,7 +21,7 @@ A leading cold storage warehouse is built with high-quality insulation, durable 
 
 By integrating advanced climate technology, safety systems, and workflow optimization, a top-tier cold storage facility ensures product freshness, reduces energy consumption, and boosts supply chain performance. Ultratek Arabia offers complete turnkey services including warehouse layout design, civil and structural construction, insulated panel installation, refrigeration system integration, racking and storage solutions, and loading dock optimization. Investing in a best-in-class cold storage facility with Ultratek Arabia helps businesses maintain competitive advantage, lead the market, and achieve long-term operational excellence.`,
     icon: '❄️',
-    image: '/services/cold-storage.png',
+    image: '/Cold Storage Facility.jpg',
     faqs: [
       {
         question: 'What is a cold storage facility?',
@@ -62,7 +62,7 @@ With a strong commitment to engineering accuracy and international safety standa
 
 As one of the best and top-rated companies in the industry, Ultratek Arabia ensures seamless project execution, high-quality workmanship, and long-lasting infrastructure solutions tailored to your specific requirements. Choosing us means partnering with a leading construction and engineering expert dedicated to delivering superior results.`,
     icon: '🏗️',
-    image: '/services/structural-civil.png',
+    image: '/Structural and Civil Works.jpg',
     faqs: [
       {
         question: 'Why are structural and civil works important for industrial and commercial projects?',
@@ -101,7 +101,7 @@ Designed with advanced insulation cores and durable metal layers, sandwich panel
 
 As one of the best and most reliable panel systems in the industry, sandwich panels provided by Ultratek Arabia help businesses achieve higher efficiency, reduced energy costs, and long-term operational stability. Their versatility makes them ideal for walls, ceilings, partitions, and custom-built temperature-controlled rooms—making them the top choice for modern refrigeration infrastructure.`,
     icon: '🧱',
-    image: '/services/sandwich-panel.png',
+    image: '/Sandwich Panel.jpg',
     faqs: [
       {
         question: 'How long do sandwich panels last?',
@@ -140,7 +140,7 @@ Ultratek Arabia is a leading provider of top-quality warehouse cooling systems, 
 
 Investing in a top-tier warehouse cooling system from Ultratek Arabia guarantees long-term reliability, reduced energy consumption, and maximum protection for your valuable inventory. Whether for small-scale warehouses or large industrial storage facilities, our best-in-class cooling solutions provide consistent performance, operational efficiency, and a safe, productive working environment. By choosing Ultratek Arabia, businesses gain a leading-edge solution that supports sustainability, minimizes product loss, and ensures operational excellence for years to come.`,
     icon: '❄️',
-    image: '/services/cooling-system.png',
+    image: '/Warehouse Cooling System.jpg',
     faqs: [
       {
         question: 'Why is a warehouse cooling system important?',
@@ -179,7 +179,7 @@ Ultratek Arabia is a leading provider of best-in-class doors and shutters lighti
 
 By investing in top-quality doors and shutters lighting from Ultratek Arabia, businesses achieve enhanced safety, improved workflow, and energy-efficient performance. Our customized solutions and expert support make Ultratek Arabia the leading company for industrial lighting, providing reliable, durable, and high-performing illumination for all access points in warehouses, cold storage, and industrial environments.`,
     icon: '💡',
-    image: '/services/lighting.png',
+    image: '/Doors and Shutters Lighting.jpg',
     faqs: [
       {
         question: 'Why is doors and shutters lighting important in industrial and warehouse facilities?',
@@ -218,7 +218,7 @@ Ultratek Arabia is recognized as one of the top and leading providers of loading
 
 With our tailored solutions, businesses benefit from reduced downtime, improved worker safety, and seamless integration with existing warehouse infrastructure. Whether you’re upgrading an existing bay or setting up a new facility, Ultratek Arabia provides top-grade loading bay designs that guarantee optimal efficiency and long-lasting reliability. Trusted across industries, we help companies create a high-performance loading environment that supports consistent, temperature-controlled, and error-free operations.`,
     icon: '🚛',
-    image: '/services/loading-bay.png',
+    image: '/Loading Bay Facilities.jpg',
     faqs: [
       {
         question: 'What are loading bay facilities in a warehouse?',
@@ -257,7 +257,7 @@ The best firefighting solutions include automated sprinkler systems, fire hydran
 
 As a leading provider, Ultratek Arabia offers fully customized firefighting systems tailored to each facility’s size, layout, and operational requirements. With expert engineering, precise installation, and ongoing maintenance, Ultratek Arabia ensures your warehouse or cold storage facility benefits from reliable, durable, and high-performance fire protection, giving businesses peace of mind and operational efficiency.`,
     icon: '🔥',
-    image: '/services/fire-fighting.png',
+    image: '/Fire Fighting System.jpg',
     faqs: [
       {
         question: 'What types of fire fighting systems are best for warehouses?',
@@ -296,7 +296,7 @@ Ultratek Arabia, a leading provider of top-quality warehouse solutions, offers c
 
 By integrating advanced racking solutions with forklifts, conveyors, and warehouse management systems, Ultratek Arabia helps businesses optimize storage capacity, improve workflow efficiency, and ensure safety. Investing in our best-in-class rack systems guarantees long-term reliability, better inventory management, and enhanced operational performance for warehouses and cold storage facilities.`,
     icon: '🏗️',
-    image: '/services/rack-system.png',
+    image: '/Rack System and Equipment.jpg',
     faqs: [
       {
         question: 'What is a rack system and why is it important for warehouses?',

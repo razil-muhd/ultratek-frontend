@@ -1,5 +1,6 @@
 import { Facebook, Instagram, Linkedin, Phone, Mail, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { servicesData } from '../data/servicesData';
 
 export default function Footer() {
     return (
@@ -20,7 +21,7 @@ export default function Footer() {
                             Leading provider of cold storage solutions, warehouse construction, and industrial optimization in Saudi Arabia. Building the future of logistics.
                         </p>
                         <div className="flex gap-4">
-                            <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-[#004575] transition-all duration-300">
+                            <a href="https://www.instagram.com/ultratek_arabia?igsh=OTF3bndqYnB6cHhl" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-[#004575] transition-all duration-300">
                                 <Instagram className="w-5 h-5" />
                             </a>
                             <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-[#004575] transition-all duration-300">
@@ -43,7 +44,7 @@ export default function Footer() {
                                     <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
                                 </svg>
                             </a>
-                            <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-[#004575] transition-all duration-300">
+                            <a href="https://www.linkedin.com/company/ultratekarabia/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-[#004575] transition-all duration-300">
                                 <Linkedin className="w-5 h-5" />
                             </a>
                             <a href="tel:+966501417878" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-[#004575] transition-all duration-300">
@@ -83,18 +84,16 @@ export default function Footer() {
                     <div>
                         <h3 className="text-xl font-bold mb-6">Our Services</h3>
                         <ul className="space-y-4">
-                            <li className="text-blue-100/80 flex items-start gap-3 hover:text-white hover:pl-2 transition-all duration-300">
-                                <span>Cold Room Construction</span>
-                            </li>
-                            <li className="text-blue-100/80 flex items-start gap-3 hover:text-white hover:pl-2 transition-all duration-300">
-                                <span>Warehouse Racking Systems</span>
-                            </li>
-                            <li className="text-blue-100/80 flex items-start gap-3 hover:text-white hover:pl-2 transition-all duration-300">
-                                <span>Loading Bay Equipment</span>
-                            </li>
-                            <li className="text-blue-100/80 flex items-start gap-3 hover:text-white hover:pl-2 transition-all duration-300">
-                                <span>Industrial Doors</span>
-                            </li>
+                            {servicesData.map((service) => (
+                                <li key={service.id}>
+                                    <Link
+                                        to={`/services/${service.slug}`}
+                                        className="text-blue-100/80 flex items-start gap-3 hover:text-white hover:pl-2 transition-all duration-300"
+                                    >
+                                        <span>{service.title}</span>
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 

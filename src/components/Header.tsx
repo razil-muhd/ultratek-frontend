@@ -42,7 +42,7 @@ export default function Header() {
 
                     {/* Desktop Social Icons & CTA */}
                     <div className="hidden lg:flex items-center gap-3 transition-opacity duration-300 pointer-events-auto opacity-100">
-                        <a href="#" className="flex items-center justify-center w-10 h-10 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300" aria-label="Instagram">
+                        <a href="https://www.instagram.com/ultratek_arabia?igsh=OTF3bndqYnB6cHhl" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300" aria-label="Instagram">
                             <Instagram className="w-5 h-5" />
                         </a>
                         <a href="#" className="flex items-center justify-center w-10 h-10 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300" aria-label="Facebook">
@@ -63,7 +63,7 @@ export default function Header() {
                                 <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
                             </svg>
                         </a>
-                        <a href="#" className="flex items-center justify-center w-10 h-10 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300" aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/company/ultratekarabia/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300" aria-label="LinkedIn">
                             <Linkedin className="w-5 h-5" />
                         </a>
                         <a href="tel:+966501417878" className="flex items-center justify-center w-10 h-10 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300" aria-label="Phone">
@@ -107,7 +107,7 @@ export default function Header() {
                             </nav>
 
                             <div className="flex items-center gap-6 mt-8">
-                                <a href="#" className="text-white/75 hover:text-white transition-colors" aria-label="Instagram">
+                                <a href="https://www.instagram.com/ultratek_arabia?igsh=OTF3bndqYnB6cHhl" target="_blank" rel="noopener noreferrer" className="text-white/75 hover:text-white transition-colors" aria-label="Instagram">
                                     <Instagram className="w-6 h-6" />
                                 </a>
                                 <a href="#" className="text-white/75 hover:text-white transition-colors" aria-label="Facebook">
@@ -128,7 +128,7 @@ export default function Header() {
                                         <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
                                     </svg>
                                 </a>
-                                <a href="#" className="text-white/75 hover:text-white transition-colors" aria-label="LinkedIn">
+                                <a href="https://www.linkedin.com/company/ultratekarabia/" target="_blank" rel="noopener noreferrer" className="text-white/75 hover:text-white transition-colors" aria-label="LinkedIn">
                                     <Linkedin className="w-6 h-6" />
                                 </a>
                                 <a href="tel:+966501417878" className="text-white/75 hover:text-white transition-colors" aria-label="Phone">

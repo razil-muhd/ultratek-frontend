@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function AboutPage() {
     const containerRef = useRef(null);
@@ -196,9 +197,9 @@ export default function AboutPage() {
                             <h2 className="text-4xl font-bold text-slate-900 mb-4">Comprehensive Solutions</h2>
                             <p className="text-slate-600 text-lg">From initial concept layout to final handover, we cover every aspect of industrial construction.</p>
                         </div>
-                        <button className="px-8 py-4 bg-slate-900 text-white font-bold rounded-xl hover:bg-blue-600 transition-colors">
+                        <Link to="/services" className="px-8 py-4 bg-slate-900 text-white font-bold rounded-xl hover:bg-blue-600 transition-colors inline-block text-center">
                             View Our Services
-                        </button>
+                        </Link>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -241,7 +242,7 @@ export default function AboutPage() {
                                 "Our commitment is not just to build structures, but to build <span className="text-blue-600">trust</span>. Every project is a promise kept."
                             </h3>
                             <div>
-                                <h4 className="text-xl font-bold text-slate-900">Mohammed Al-Rashid</h4>
+                                <h4 className="text-xl font-bold text-slate-900">Abdullah Mullapally</h4>
                                 <p className="text-blue-500 font-medium tracking-wide text-sm uppercase">Founder & CEO</p>
                             </div>
                         </div>

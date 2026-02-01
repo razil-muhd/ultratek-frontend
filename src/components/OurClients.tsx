@@ -53,7 +53,7 @@ export default function OurClients() {
                         }}
                     >
                         {duplicatedClients.map((client, index) => (
-                            <div key={`${client.id}-${index}`} className="flex-shrink-0 w-40 h-24 bg-gray-50 border border-gray-100 rounded-xl flex items-center justify-center p-4 hover:shadow-md transition-shadow">
+                            <div key={`${client.id}-${index}`} className="flex-shrink-0 w-40 h-24 bg-white rounded-xl flex items-center justify-center p-4 hover:shadow-md transition-shadow">
                                 <img
                                     src={client.logo}
                                     alt={client.name}
@@ -85,7 +85,7 @@ export default function OurClients() {
                         }}
                     >
                         {duplicatedClients.map((client, index) => (
-                            <div key={`reverse-${client.id}-${index}`} className="flex-shrink-0 w-40 h-24 bg-gray-50 border border-gray-100 rounded-xl flex items-center justify-center p-4 hover:shadow-md transition-shadow">
+                            <div key={`reverse-${client.id}-${index}`} className="flex-shrink-0 w-40 h-24 bg-white rounded-xl flex items-center justify-center p-4 hover:shadow-md transition-shadow">
                                 <img
                                     src={client.logo}
                                     alt={client.name}
