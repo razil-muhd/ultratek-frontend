@@ -101,7 +101,7 @@ Designed with advanced insulation cores and durable metal layers, sandwich panel
 
 As one of the best and most reliable panel systems in the industry, sandwich panels provided by Ultratek Arabia help businesses achieve higher efficiency, reduced energy costs, and long-term operational stability. Their versatility makes them ideal for walls, ceilings, partitions, and custom-built temperature-controlled rooms—making them the top choice for modern refrigeration infrastructure.`,
     icon: '🧱',
-    image: '/Sandwich Panel.jpg',
+    image: '/Sandwich Panel.jpg.jpeg',
     faqs: [
       {
         question: 'How long do sandwich panels last?',
@@ -140,7 +140,7 @@ Ultratek Arabia is a leading provider of top-quality warehouse cooling systems, 
 
 Investing in a top-tier warehouse cooling system from Ultratek Arabia guarantees long-term reliability, reduced energy consumption, and maximum protection for your valuable inventory. Whether for small-scale warehouses or large industrial storage facilities, our best-in-class cooling solutions provide consistent performance, operational efficiency, and a safe, productive working environment. By choosing Ultratek Arabia, businesses gain a leading-edge solution that supports sustainability, minimizes product loss, and ensures operational excellence for years to come.`,
     icon: '❄️',
-    image: '/Warehouse Cooling System.jpg',
+    image: '/cooling system.jpeg',
     faqs: [
       {
         question: 'Why is a warehouse cooling system important?',
@@ -179,7 +179,7 @@ Ultratek Arabia is a leading provider of best-in-class doors and shutters lighti
 
 By investing in top-quality doors and shutters lighting from Ultratek Arabia, businesses achieve enhanced safety, improved workflow, and energy-efficient performance. Our customized solutions and expert support make Ultratek Arabia the leading company for industrial lighting, providing reliable, durable, and high-performing illumination for all access points in warehouses, cold storage, and industrial environments.`,
     icon: '💡',
-    image: '/Doors and Shutters Lighting.jpg',
+    image: '/Doors and Shutter.jpg.jpeg',
     faqs: [
       {
         question: 'Why is doors and shutters lighting important in industrial and warehouse facilities?',

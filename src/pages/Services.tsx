@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { servicesData } from '@/data/servicesData';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function ServicesPage() {
+    const navigate = useNavigate();
+
     const fadeInUp = {
         initial: { opacity: 0, y: 20 },
         whileInView: { opacity: 1, y: 0 },
@@ -70,7 +72,8 @@ export default function ServicesPage() {
                         <motion.div
                             key={service.id}
                             variants={fadeInUp}
-                            className="group relative bg-slate-900/50 border border-white/5 rounded-3xl overflow-hidden hover:border-blue-500/30 transition-all duration-500"
+                            onClick={() => navigate(`/services/${service.slug}`)}
+                            className="group relative bg-slate-900/50 border border-white/5 rounded-3xl overflow-hidden hover:border-blue-500/30 transition-all duration-500 cursor-pointer"
                         >
                             {/* Card Image */}
                             <div className="h-64 overflow-hidden relative">
@@ -97,13 +100,10 @@ export default function ServicesPage() {
                                     {service.shortDescription}
                                 </p>
 
-                                <Link
-                                    to={`/services/${service.slug}`}
-                                    className="inline-flex items-center text-sm font-bold text-white uppercase tracking-wider group/link"
-                                >
+                                <div className="inline-flex items-center text-sm font-bold text-white uppercase tracking-wider group/link">
                                     Explore Service
                                     <span className="ml-2 w-8 h-[1px] bg-blue-500 group-hover/link:w-12 transition-all duration-300" />
-                                </Link>
+                                </div>
 
                                 {/* Decorative Gradient on Hover */}
                                 <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />

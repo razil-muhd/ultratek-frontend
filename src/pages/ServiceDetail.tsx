@@ -120,12 +120,17 @@ export default function ServiceDetail() {
                                 Get a comprehensive quote tailored to your specific industrial requirements today.
                             </p>
 
-                            <button className="w-full py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-500 transition-all shadow-lg hover:shadow-blue-500/25 relative z-10 flex items-center justify-center group">
+                            <a
+                                href={`https://wa.me/966501417878?text=${encodeURIComponent(`Hello Ultratek, I am interested in your ${service.title} service. Could you please provide more information?`)}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-full py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-500 transition-all shadow-lg hover:shadow-blue-500/25 relative z-10 flex items-center justify-center group"
+                            >
                                 Request Consultation
                                 <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                 </svg>
-                            </button>
+                            </a>
 
                             <div className="mt-8 pt-8 border-t border-white/10 relative z-10">
                                 <p className="text-sm text-slate-500 mb-2 uppercase tracking-wider font-semibold">Other Services</p>
