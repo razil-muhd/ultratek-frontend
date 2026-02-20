@@ -8,7 +8,7 @@ export default function WhoWeAre() {
             id: 'mission',
             label: "OUR MISSION",
             description: "Our mission is to provide high-quality, end-to-end construction services for cold rooms and warehouses, combining over 22 years of expertise with skilled workmanship, modern equipment, and dedicated manpower. Whether delivering complete turnkey projects or executing specialized scopes, we are committed to reliability, safety, and long-term client satisfaction in every project we undertake.",
-            image: "/mission.jpg"
+            image: "/Cold Storage Facility.jpg"
         },
         {
             id: 'vision',
